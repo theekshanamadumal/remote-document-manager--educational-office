@@ -1,0 +1,68 @@
+.body {
+  min-width: 20px;
+}
+h2 {
+  color: rgba(128, 123, 123, 0.651);
+}
+.navbar {
+  margin-bottom: 0px;
+}
+
+.container {
+  font-family: "Noto Sans Sinhala", sans-serif;
+}
+.services h1 {
+  font-size: 25px;
+  color: grey;
+}
+.services ol li {
+  width: 40%;
+  min-width: 300px;
+
+  background: #ccc5;
+  margin: 15px;
+  padding: 5px;
+}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+footer {
+  text-align: right;
+  padding: 3px;
+  background-color: BLACK;
+  color: rgba(190, 187, 187, 0.815);
+}
+.hompage-logo-row {
+  background-color: gray;
+}
+
+
+.maps{
+  
+  padding: 50px;
+  padding-left: 200px;
+
+  width: 50%;
+  min-width: 300px;
+}
+.alert{
+  color: red;
+  font-size: x-large;
+}
