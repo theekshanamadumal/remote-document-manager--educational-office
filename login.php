@@ -15,14 +15,14 @@
             if ($result){
 
                 $details=mysqli_fetch_assoc($result);
-                $password=$details['password1'];
+                $password=$details['password'];
                 $user_id =$details['ID'];
 
                 if ($password==$_POST['password'] and $user_id==$_POST['user_name']) {
-                    echo"<table ><tr><td><hr>.............login successful ! .............</td></tr>";
+                    echo"<h1><table ><tr><td><hr>.............login successful ! .............</td></tr>";
                    
                     echo'<tr><td><hr>
-                     <a href="home.php">.....................home...........</a></td></tr></table><hr></div>';
+                     <a href="home.php">.....................home...........</a></td></tr></table><hr></div></h1>';
                      include_once('inc/foot.php');    
                      mysqli_close($connection);
                     die;

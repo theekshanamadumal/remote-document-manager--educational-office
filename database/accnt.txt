@@ -1,4 +1,3 @@
-<?php require_once('inc/connection.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,43 +33,18 @@
 <?php
 
     
-        
-    $first_name=NULL;
-    $second_name=NULL;
-    $address=NULL;
-    $telephone=NULL;
-    $email=NULL;
-    $school=NULL;
-    $occupation=NULL;
+
   
     if (isset($_POST['submit'])) {
 
+    $query_id= "SELECT ID FROM userdetails WHERE ID='{$_POST['ID']}'";  
     
-        $ID=$_POST["ID"];    
-        $pp=$_POST["password1"];
-        
-        $first_name=$_POST['first_name'];
-        $second_name=$_POST['second_name'];
-        $address=$_POST['address'];
-        $telephone=$_POST['telephone'];
-        $email=$_POST['email'];
-        $school=$_POST['school'];
-        $occupation=$_POST['occupation'];
-
-    $query_id= "SELECT ID FROM userdetails WHERE ID='{$ID}'";  
-
-    $query_user="INSERT INTO userdetails VALUES(
-    '{$ID}',
-    '{$first_name}',
-    '{$second_name}',
-    '{$address}',
-    '{$telephone}',
-    '{$email}',
-    '{$school}',
-    '{$occupation}')";
+    $query_user="INSERT INTO userdetails 
+    VALUES('{$_POST['ID']}','{$_POST['first_name']}','{$_POST['second_name']}','{$_POST['address']}',
+           '{$_POST['telephone']}','{$_POST['email']}','{$_POST['occupation']}','{$_POST['school']}','{$_POST['occupation']}')";
 
     $query_password="INSERT INTO passwords 
-        VALUES('{$ID}','{$pp}')";
+        VALUES('{$_POST["ID"]}','{$_POST["password1"]}')";
 
         if($_POST['ID']!=null){
                 
@@ -93,15 +67,14 @@
                         $pass  = mysqli_query($connection,$query_password);   
             
                         //16
-                        echo $ID  ;   
+                        echo $_POST['ID']  ;   
                                             
-                        echo $pp ;
+                        echo $_POST['password1'] ;
                                  
                         if ($pass) {
                             if ($result) {
                             echo"account created successfully<br><hr>";
-                            echo'<a href="home.php">Home Page</a>';       }  
-                            else  echo"account creation failed no result<br><hr>";                               
+                            echo'<a href="home.php">Home Page</a>';       }                                 
                         }
 
                         else  echo"account creation failed no pass<br><hr>";  
