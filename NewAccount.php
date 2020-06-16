@@ -11,13 +11,13 @@
     
 <form action = "NewAccount.php" method="POST">    
     <pre id="container-fluid text-left"><h4><center>
- NATIONAL ID NO : <input name="ID" type="text" id=""><br>
- FIRST_NAME     : <input name="first_name" type="text" id=""><br>
- SECOND_NAME    : <input name="second_name" type="text" id=""><br>
- ADDRESS        : <input name="address" type="text" id=""><br>
- TELEPHONE      : <input name="telephone" type="text" id=""><br>
- EMAIL ADDRESS   : <input name="email" type="text" id=""> <br>
- SCHOOL         : <input name="school" type="text" id="">
+ NATIONAL ID NO : <input name="ID" type="text" ><br>
+ FIRST_NAME     : <input name="first_name" type="text" ><br>
+ SECOND_NAME    : <input name="second_name" type="text" ><br>
+ ADDRESS        : <input name="address" type="text" ><br>
+ TELEPHONE      : <input name="telephone" type="text" ><br>
+ EMAIL ADDRESS   : <input name="email" type="text" > <br>
+ SCHOOL         : <input name="school" type="text" >
    
  OCCUPATION    :          <select name="occupation">
  <option value="teacher">teacher</option>
@@ -26,8 +26,8 @@
 
             </select>
     <br>
- enter   password : <input name="password1" type="password" id=""><br>
- confirm password : <input name="password2" type="password" id=""><br>   
+ enter   password : <input name="password1" type="password" ><br>
+ confirm password : <input name="password2" type="password" ><br>   
 <input name="submit" type="submit" id=""></h4></center></pre>
 </form>
 <div class="alert">   
