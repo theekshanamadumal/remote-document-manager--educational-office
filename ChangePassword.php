@@ -21,7 +21,7 @@
             
             
             
-            $query= "SELECT ID,Email FROM user WHERE ID='{$id}'";
+            $query= "SELECT ID,Email FROM userdetails WHERE ID='{$id}'";
             $result= mysqli_query($connection,$query);
 
             if ($result){
@@ -31,7 +31,7 @@
                 $ido =$details['ID'];
                 
                 if ($email==$emailo and $id==$id) {
-                    echo"New password was sent to email address";
+                    echo"password reset";
                    
                     echo'<hr> <a href="home.php">home</a>';
                     include_once('inc/foot.php');    
