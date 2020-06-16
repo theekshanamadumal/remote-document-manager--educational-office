@@ -34,7 +34,7 @@
 <?php
 
 
-    $query_user="INSERT INTO user 
+    $query_user="INSERT INTO userdetails 
         VALUES('{$_POST[ID]}','{$_POST[first_name]}','{$_POST[second_name]}','{$_POST[address]}',
                '{$_POST[telephone]}','{$_POST[email]}','{$_POST[occupation]}','{$_POST[school]}')";
 

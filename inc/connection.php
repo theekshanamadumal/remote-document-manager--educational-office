@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 $servername='localhost';
 $username='root';
 $passwrd='';
-$database='userdb';
+$database='deon';
 
 $connection = mysqli_connect($servername,$username,$passwrd,$database);
 
