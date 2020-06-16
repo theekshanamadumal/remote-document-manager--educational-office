@@ -83,8 +83,7 @@
                 
                 if ($id_result){
                     $id_details=mysqli_num_rows($id_result);
-                    echo $id_details ,'<br>'; 
-
+                    
                     if ($id_details==null){
 
                        
@@ -93,24 +92,12 @@
                         $pass  = mysqli_query($connection,$query_password);   
             
                                                  
-                        if ($pass) {
-                            echo $ID,'<br>';
-                            echo $pp,'<br>';
-                            echo $first_name,'<br>';
-                            echo $second_name,'<br>';
-                            echo $address,'<br>';
-                            echo $telephone,'<br>';
-                            echo $email,'<br>';
-                            echo $school,'<br>';
-                            echo $occupation,'<br>';
-
-                            if ($result) {
+                        if ($pass && $result) {
+                            
                             echo"account created successfully<br><hr>";
                             echo'<a href="home.php">Home Page</a>';       }  
-                            else  echo"account creation failed no result<hr>";                               
-                        }
-
-                        else  echo"account creation failed no pass<br><hr>";  
+                                                       
+                        else  echo"account creation failed <br><hr>";  
                     
                     }
                     else echo "Already account exists!";
