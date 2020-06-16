@@ -110,7 +110,7 @@
                     echo"password can not be empty.<hr>";    
             }
 
-            else echo"password are not maching.<hr>";    
+            else echo"passwords are not maching.<hr>";    
         }
         
         else echo'National Identy value can not be empty<br>';                    
