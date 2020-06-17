@@ -1,6 +1,8 @@
 <?php 
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 /* this page conclude the all  parts common to the head of the web pages */ ?>
-
 
 
 <link      rel="stylesheet"      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"    />
@@ -20,14 +22,8 @@
       }
 </style>
 
-
-
-
 <?php 
 /* navigational panel*/ ?>
-
-
-
 
 
 <div class="row  hidden-xs" style=" padding:10px;">
@@ -57,16 +53,22 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li><a href="Home.php">Home</a></li>
-            <?<li><a href="#">FAQs</a></li>
+            <li><a href="#">FAQs</a></li>
             <li><a href="ContactUs.php">Contact Us</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" id="myNavbar">
+          
+          <?php if(!isset($_SESSION['UserName'])) {?>
             <li>
               <a href="NewAccount.php"><span></span> Register</a>
             </li>
             <li>
               <a href="Login.php"><span></span> Login</a>
             </li>
+          <?php } else {?>
+            <li><a href="UserJobs.php"><?php echo $_SESSION['UserName'];?></a></li>
+            <li><a href="logout.php">Logout</a></li>
+          <?php }?>
           </ul>
         </div>
       </div>

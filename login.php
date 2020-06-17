@@ -5,10 +5,11 @@
 <?php include_once("inc/head.php"); ?>
 <div class="alert">
 <?php
+    
     if   (isset($_POST['submit'])){
         
         if($_POST['user_name']!=null and $_POST['password']!=null){
-            
+              
         $query= "SELECT * FROM passwords WHERE ID='{$_POST['user_name']}'";
             $result= mysqli_query($connection,$query);
 
@@ -19,19 +20,19 @@
                 $user_id =$details['ID'];
 
                 if ($password==$_POST['password'] and $user_id==$_POST['user_name']) {
-                    echo"<h1><table ><tr><td><hr>.............login successful ! .............</td></tr>";
-                   
-                    echo'<tr><td><hr>
-                     <a href="home.php">.....................home...........</a></td></tr></table><hr></div></h1>';
-                     include_once('inc/foot.php');    
-                     mysqli_close($connection);
+                    $_SESSION['UserName'] = $user_id;
+                    
+                    
+                    header("location:UserJobs.php");
+                    include_once('inc/foot.php');    
+                    //mysqli_close($connection);
                     die;
                 }
                 else echo "invalid user name or password";                     
             }
             else echo "<hr>LOGIN FAILED!";
         }
-        else echo" user name and password can not be empty";            
+        else echo" user name and password cannot be empty";            
     }
 ?></div>
 
