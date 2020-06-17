@@ -1,3 +1,4 @@
+
 <html>
 <head><title>Admin login page</title></head>
 <body>
@@ -58,4 +59,5 @@ password :  <input name="password" type="password" id="">
 	
 </body>
 </html>
+
 <?php mysqli_close($connection);?> 

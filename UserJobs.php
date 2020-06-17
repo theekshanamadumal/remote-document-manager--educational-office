@@ -16,7 +16,7 @@
     <?php include_once("inc/head.php"); ?>
       
       <?php
-          $query= "SELECT requestId,status,description FROM requestslist WHERE userId='{$_SESSION['UserName']}' ";
+          $query= "SELECT requestslist.requestId,requestslist.status,requestslist.description,requesttypes.details FROM requestslist JOIN requesttypes ON requestslist.requestId=requesttypes.requestId WHERE userId='{$_SESSION['UserName']}' ";
           $result= mysqli_query($connection,$query);
           
           //Genetrating a Job Description table if jobs any are submitted
@@ -26,27 +26,36 @@
               <h1 style="color:gray;">සාදරයෙන් පිළිගනිමු </h1>
               <p></p>
           </div>
-          <div class="table-content" style="padding-top:50px;padding-bottom :50px;">
-          <div class=" table-responsive">
-          <div class="col-sm-1 "></div>
-          <div class=" col-sm-4 col-md-6 ">
-            <table class="table table-hover table-striped">
-            <th>Request ID</th>
-            <th >Status</th>
-            <th >Description</th>
+          <div class="limiter">
+          <div class="container-table100">
+          <div class="wrap-table100">
+				                <div class="table100">
+					                <table>
+						                <thead>
+                                <tr class="table100-head">
+                                <th class="column1">Request ID</th>
+                                <th class="column1">Details</th>
+                                <th class="column1" >Status</th>
+                                <th class="column1" >Description</th>
+                                </tr>
+					                  </thead>
+						                <tbody>
             
             <?php
             while($row = $result-> fetch_assoc()){
-                echo "<tr><td>" .$row["requestId"]."</td><td>".$row["status"] . "</td><td>".$row["description"]."</td></tr>";
+                echo "<tr><td class='column1' >" .$row["requestId"]."</td><td class='column1'>".$row["details"]."</td><td class='column1'>".$row["status"] . "</td><td class='column1'>".$row["description"]."</td></tr>";
             }
-            
+            echo "</tbody>";
             echo "</table>";
+            echo"</div>";
+            echo"</div>";
+            echo"</div>";
             echo"</div>";
             //echo"<div class=' col-sm'></div>";
              
             
-            echo"</div>";
-            echo"</div>";
+            
+            
 
           }
 
