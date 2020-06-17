@@ -1,4 +1,6 @@
-
+<?php
+session_start()
+?>
 <html>
 <head><title>Admin login page</title></head>
 <body>
@@ -20,12 +22,11 @@
                 $user_id =$details['ID'];
 
                 if ($password==$_POST['password'] and $user_id==$_POST['user_name']) {
-                    echo"<table ><tr><td><hr>.............login successful ! .............</td></tr>";
-                   
-                    echo'<tr><td><hr>
-                     <a href="home.php">.....................home...........</a></td></tr></table><hr></div>';
-                     include_once('inc/foot.php');    
-                     mysqli_close($connection);
+                    $_SESSION['UserName'] = $user_id;
+                    
+                    header("location:AdminEdit.php");
+                    include_once('inc/foot.php');    
+                    //mysqli_close($connection);
                     die;
                 }
                 else echo "invalid user name or password";                     
@@ -40,24 +41,16 @@
     <pre id="container-fluid text-left"><br><br><br><h3><center>
 Admin name:  <input name="user_name" type="text" id="">
 
-password :  <input name="password" type="password" id="">
+password  :  <input name="password" type="password" id="">
 
     <input name="submit" type="submit" id="" value="log in"></form>	<br>
    
-   
-    <hr>
-    
-    <a href="NewAdmin.php">CREATE NEW ACCOUNT</a><br></center></h3>
-    <hr>
     </pre>
      
 	
     
-
-
 <?php    include_once('inc/foot.php');    ?>
 	
 </body>
 </html>
-
 <?php mysqli_close($connection);?> 
