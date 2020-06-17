@@ -1,3 +1,4 @@
+
 <?php require_once('inc/connection.php');?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,4 +75,5 @@
 <?php include_once('inc/foot.php'); ?>
 </body>
 </html>
+
 <?php mysqli_close($connection);?> 
