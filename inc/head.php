@@ -1,8 +1,7 @@
 <?php 
-
-session_start();
-
-
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 /* this page conclude the all  parts common to the head of the web pages */ ?>
 
 

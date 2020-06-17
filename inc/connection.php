@@ -15,5 +15,5 @@ if ($connection->connect_error){
 
 //mysqli_close($connection);
 // echo'connection closed'
-
+session_start();
 ?>
