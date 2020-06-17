@@ -59,7 +59,7 @@ session_start();
           </ul>
           <ul class="nav navbar-nav navbar-right" id="myNavbar">
           
-          <?php if(!$_SESSION['UserName']) {?>
+          <?php if(!isset($_SESSION['UserName'])) {?>
             <li>
               <a href="NewAccount.php"><span></span> Register</a>
             </li>
