@@ -16,7 +16,7 @@
     <?php include_once("inc/head.php"); ?>
       
       <?php
-          $query= "SELECT requestId,status,description FROM requestslist WHERE userId='{$_SESSION['UserName']}' ";
+          $query= "SELECT requestslist.requestId,requestslist.status,requestslist.description,requesttypes.details FROM requestslist JOIN requesttypes ON requestslist.requestId=requesttypes.requestId WHERE userId='{$_SESSION['UserName']}' ";
           $result= mysqli_query($connection,$query);
           
           //Genetrating a Job Description table if jobs any are submitted
@@ -32,12 +32,14 @@
           <div class=" col-sm-4 col-md-6 ">
             <table class="table table-hover table-striped">
             <th>Request ID</th>
+            <th>Details</th>
             <th >Status</th>
             <th >Description</th>
             
+            
             <?php
             while($row = $result-> fetch_assoc()){
-                echo "<tr><td>" .$row["requestId"]."</td><td>".$row["status"] . "</td><td>".$row["description"]."</td></tr>";
+                echo "<tr><td>" .$row["requestId"]."</td><td>".$row["details"]."</td><td>".$row["status"] . "</td><td>".$row["description"]."</td></tr>";
             }
             
             echo "</table>";

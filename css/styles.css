@@ -1,5 +1,11 @@
-.body {
+html {
+  height: 100%;
+}
+body {
   min-width: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 h2 {
   color: rgba(128, 123, 123, 0.651);
@@ -44,25 +50,28 @@ a:active {
   text-decoration: underline;
 }
 footer {
+  margin-top: auto;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: right;
-  padding: 3px;
-  background-color: BLACK;
+  padding: 20px;
+  background-color: black;
   color: rgba(190, 187, 187, 0.815);
 }
 .hompage-logo-row {
   background-color: gray;
 }
 
-
-.maps{
-  
+.maps {
   padding: 50px;
   padding-left: 200px;
 
   width: 50%;
   min-width: 300px;
 }
-.alert{
+.alert {
   color: red;
   font-size: x-large;
 }
