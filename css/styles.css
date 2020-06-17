@@ -1,0 +1,205 @@
+html {
+  height: 100%;
+}
+body {
+  min-width: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+h2 {
+  color: rgba(128, 123, 123, 0.651);
+}
+.navbar {
+  margin-bottom: 0px;
+}
+
+.container {
+  font-family: "Noto Sans Sinhala", sans-serif;
+}
+.services h1 {
+  font-size: 25px;
+  color: grey;
+}
+.services ol li {
+  width: 40%;
+  min-width: 300px;
+
+  background: #ccc5;
+  margin: 15px;
+  padding: 5px;
+}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+footer {
+  margin-top: auto;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  padding: 20px;
+  background-color: black;
+  color: rgba(190, 187, 187, 0.815);
+}
+.hompage-logo-row {
+  background-color: gray;
+}
+
+.maps {
+  padding: 50px;
+  padding-left: 200px;
+
+  width: 50%;
+  min-width: 300px;
+}
+.alert {
+  color: red;
+  font-size: x-large;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 1170px;
+  padding-bottom: 800px;
+  padding-right: 100px;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: static;
+}
+table td,
+table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: black;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td,
+table th {
+  text-align: left;
+}
+table td.l,
+table th.l {
+  text-align: right;
+}
+table td.c,
+table th.c {
+  text-align: center;
+}
+table td.r,
+table th.r {
+  text-align: center;
+}
+
+.table100-head th {
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ebe7e7f6;
+}
+
+tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+  background-color: #ebe7e7f6;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.column1 {
+  width: 260px;
+  padding-left: 40px;
+}
+
+.column2 {
+  width: 160px;
+}
+
+.column3 {
+  width: 245px;
+}
+
+.column4 {
+  width: 110px;
+  text-align: right;
+}
+
+.column5 {
+  width: 170px;
+  text-align: right;
+}
+
+.column6 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
