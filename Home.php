@@ -10,8 +10,8 @@
   <body>
     <?php include_once("inc/head.php"); ?>
     <div id="container" style=" padding:20px; display:block; align:center">
-        <div><h1 style="color:grey;">Introduction</h1>
-        <p>පුරවැසි ප්‍රඥප්තිය කලාප අධ්‍යාපන කාර්යාලය  නිකවැරටිය </p>
+        <div><h1 style="color:black;">කලාප අධ්‍යාපන කාර්යාලය,නිකවැරටිය</h1>
+        <p style="color:blue; font-size: medium;">නිකවැරටිය අධ්‍යාපන කලාප කාර්යාලයට සාදරයෙන් පිළිගනිමු. මෙම වෙබ් පිටුව මගින් කලාපයේ සියලුම පාසල්වල විදුහල්පතිවරුන්ට, ගුරුවරුන්ට සහ කාර්ය මණ්ඩලයේ සියලුම සාමාජිකයන්ට පහත සදහන් ඕනෑම සේවාවක් ලබා ගත හැක. </p>
         </div>
         <div class="services">
           <h1>ලබා දෙන සේවා </h1>
