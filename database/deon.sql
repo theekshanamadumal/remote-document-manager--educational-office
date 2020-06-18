@@ -39,6 +39,29 @@ LOCK TABLES `adminpwrds` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `approvelist`
+--
+
+DROP TABLE IF EXISTS `approvelist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `approvelist` (
+  `requestNo` int(20) NOT NULL,
+  `ID` varchar(12) NOT NULL,
+  PRIMARY KEY (`requestNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `approvelist`
+--
+
+LOCK TABLES `approvelist` WRITE;
+/*!40000 ALTER TABLE `approvelist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `approvelist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `passwords`
 --
 
@@ -153,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-17 17:23:39
+-- Dump completed on 2020-06-18  9:09:47
