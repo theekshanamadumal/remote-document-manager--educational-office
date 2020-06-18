@@ -66,6 +66,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <li>
               <a href="Login.php"><span></span> Login</a>
             </li>
+            
           <?php } else {?>
             <li><a href=<?php  echo $_SESSION['uI'] ?>><?php echo $_SESSION['loginID'];?></a></li>
             <li><a href="logout.php">Logout</a></li>
