@@ -34,7 +34,7 @@
 						                <thead>
                                 <tr class="table100-head">
                                 <th class="column1">Request ID</th>
-                                <th class="column1">Details</th>
+                                <th class="column1">Request Type</th>
                                 <th class="column1" >Status</th>
                                 <th class="column1" >Description</th>
                                 </tr>
