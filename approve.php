@@ -19,7 +19,7 @@ if ($count==TRUE){
     while($row=$result->fetch_assoc()){
         //echo "hii";
         $No=$row["requestNo"];
-        $id=$row["ID"];
+        $id=$row["userId"];
         //echo $No;
         //echo $id;
         //echo $row["requestNo"]."   "."<br>";
