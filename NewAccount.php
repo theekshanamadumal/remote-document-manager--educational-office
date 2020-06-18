@@ -95,7 +95,8 @@
                         if ($pass && $result) {
                             
                             echo"account created successfully<br><hr>";
-                            echo'<a href="home.php">Home Page</a>';       }  
+                            echo'<a href="home.php">Home Page</a>'; 
+                            ;}  
                                                        
                         else  echo"account creation failed <br><hr>";  
                     
