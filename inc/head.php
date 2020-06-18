@@ -8,6 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <link      rel="stylesheet"      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"    />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="jquery.tabledit.min.js"></script>
 <link   rel="stylesheet"    href="css/styles.css" />
 <style>
       @import url(//fonts.googleapis.com/earlyaccess/notosanssinhala.css);
@@ -58,7 +59,7 @@ if (session_status() == PHP_SESSION_NONE) {
           </ul>
           <ul class="nav navbar-nav navbar-right" id="myNavbar">
           
-          <?php if(!isset($_SESSION['UserName'])) {?>
+          <?php if(!isset($_SESSION['loginID'])) {?>
             <li>
               <a href="NewAccount.php"><span></span> Register</a>
             </li>
@@ -66,7 +67,7 @@ if (session_status() == PHP_SESSION_NONE) {
               <a href="Login.php"><span></span> Login</a>
             </li>
           <?php } else {?>
-            <li><a href="UserJobs.php"><?php echo $_SESSION['UserName'];?></a></li>
+            <li><a href=<?php  echo $_SESSION['uI'] ?>><?php echo $_SESSION['loginID'];?></a></li>
             <li><a href="logout.php">Logout</a></li>
           <?php }?>
           </ul>
