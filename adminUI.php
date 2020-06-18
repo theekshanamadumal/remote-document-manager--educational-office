@@ -16,7 +16,7 @@
     <?php include_once("inc/head.php"); ?>
       
       <?php
-          $query= "SELECT requestslist.requestNo,requestslist.requestId,requestslist.userId,requestslist.status,requestslist.description,requesttypes.details FROM requestslist JOIN requesttypes ON requestslist.requestId=requesttypes.requestId  ";
+          $query= "SELECT requestslist.requestNo,requestslist.requestId,requestslist.userId,requestslist.status,requestslist.description,requesttypes.details FROM requestslist JOIN requesttypes ON requestslist.requestId=requesttypes.requestId ORDER BY requestNo ";
           $result= mysqli_query($connection,$query);
           
           //Genetrating a Job Description table if jobs any are submitted
