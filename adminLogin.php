@@ -40,7 +40,7 @@
     <pre id="container-fluid text-left"><br><br><br><h3><center>
 Admin name:  <input name="user_name" type="text" id="">
 
-password :  <input name="password" type="password" id="">
+password  :  <input name="password" type="password" id="">
 
     <input name="submit" type="submit" id="" value="log in"></form>	<br>
    
