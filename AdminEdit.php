@@ -39,7 +39,7 @@ if ($result-> num_rows > 0){?>
     
     <?php
     while($row = $result-> fetch_assoc()){
-        echo "<tr><td class='column1' >" .$row["requestNo"]."</td><td class='column2' >" .$row["requestId"]."</td><td class='column3'>".$row["ID"] ."</td><td class='column4'>".$row["status"] . "</td><td class='column5'>".$row["description"]."</td></tr>";
+        echo "<tr><td class='column1' >" .$row["requestNo"]."</td><td class='column2' >" .$row["requestId"]."</td><td class='column3'>".$row["userId"] ."</td><td class='column4'>".$row["status"] . "</td><td class='column5'>".$row["description"]."</td></tr>";
         
       }
     echo "</tbody>";
