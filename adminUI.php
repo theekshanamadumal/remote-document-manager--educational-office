@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Jobs Page</title>
+    <title>adminUI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     
@@ -16,25 +16,28 @@
     <?php include_once("inc/head.php"); ?>
       
       <?php
-          $query= "SELECT requestslist.requestId,requestslist.status,requestslist.description,requesttypes.details FROM requestslist JOIN requesttypes ON requestslist.requestId=requesttypes.requestId WHERE userId='{$_SESSION['loginID']}' ";
+          $query= "SELECT requestslist.requestNo,requestslist.requestId,requestslist.userId,requestslist.status,requestslist.description,requesttypes.details FROM requestslist JOIN requesttypes ON requestslist.requestId=requesttypes.requestId  ";
           $result= mysqli_query($connection,$query);
           
           //Genetrating a Job Description table if jobs any are submitted
 
           if ($result-> num_rows > 0){?>
           <div class="intro">
-              <h1 style="color:gray;">සාදරයෙන් පිළිගනිමු </h1>
-              <p></p>
+              <!--<h1 style="color:gray;">සාදරයෙන් පිළිගනිමු </h1>-->
+              
           </div>
           <div class="limiter">
           <div class="container-table100">
           <div class="wrap-table100">
 				                <div class="table100">
-					                <table>
+					                <table id="editable_table">
 						                <thead>
                                 <tr class="table100-head">
+                                <th class="column1">Request No</th>
                                 <th class="column1">Request ID</th>
                                 <th class="column1">Details</th>
+                                
+                                <th class="column1">User ID</th>
                                 <th class="column1" >Status</th>
                                 <th class="column1" >Description</th>
                                 </tr>
@@ -42,8 +45,14 @@
 						                <tbody>
             
             <?php
-            while($row = $result-> fetch_assoc()){
-                echo "<tr><td class='column1' >" .$row["requestId"]."</td><td class='column1'>".$row["details"]."</td><td class='column1'>".$row["status"] . "</td><td class='column1'>".$row["description"]."</td></tr>";
+            while($row = mysqli_fetch_array($result)){
+                echo "<tr><td class='column1' >".$row["requestNo"].
+                     "</td><td class='column1'>" .$row["requestId"].
+                     "</td><td class='column1'>".$row["details"].
+                     "</td><td class='column1'>".$row["userId"].
+                     "</td><td class='column1'>".$row["status"] . 
+                     "</td><td class='column1'>".$row["description"].
+                     "</td></tr>";
             }
             echo "</tbody>";
             echo "</table>";
@@ -72,3 +81,23 @@
   </body>
 
 </html>
+<script>  
+$(document).ready(function(){  
+     $('#editable_table').Tabledit({
+      url:'.inc/action.php',
+      columns:{
+       identifier:[3, "userId"],
+       editable:[[4, 'status'], [5, 'description']]
+      },
+      restoreButton:false,
+      onSuccess:function(data, textStatus, jqXHR)
+      {
+       if(data.action == 'delete')
+       {
+        $('#'+data.id).remove();
+       }
+      }
+     });
+ 
+});  
+ </script>

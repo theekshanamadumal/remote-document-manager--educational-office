@@ -22,11 +22,13 @@ session_start()
                 $user_id =$details['ID'];
 
                 if ($password==$_POST['password'] and $user_id==$_POST['user_name']) {
-                    $_SESSION['UserName'] = $user_id;
-                    
-                    header("location:AdminEdit.php");
+                    include_once('logout.php');
+                    session_start();
+                    $_SESSION['loginID'] = $user_id;
+                    $_SESSION['uI']="adminUI.php";
+                    header("location:adminUI.php");
                     include_once('inc/foot.php');    
-                    //mysqli_close($connection);
+                    mysqli_close($connection);
                     die;
                 }
                 else echo "invalid user name or password";                     

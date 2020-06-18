@@ -20,7 +20,8 @@
                 $user_id =$details['ID'];
 
                 if ($password==$_POST['password'] and $user_id==$_POST['user_name']) {
-                    $_SESSION['UserName'] = $user_id;
+                    $_SESSION['loginID'] = $user_id;
+                    $_SESSION['uI']="UserJobs.php";
                     
                     
                     header("location:UserJobs.php");
