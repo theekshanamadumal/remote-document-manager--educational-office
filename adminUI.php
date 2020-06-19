@@ -16,7 +16,7 @@
     <?php include_once("inc/head.php"); ?>
       
       <?php
-          $query= "SELECT requestslist.requestNo,requestslist.requestId,requestslist.userId,requestslist.status,requestslist.description,requesttypes.details FROM requestslist JOIN requesttypes ON requestslist.requestId=requesttypes.requestId  ";
+          $query= "SELECT requestslist.requestNo,requestslist.requestId,requestslist.userId,requestslist.status,requestslist.description,requesttypes.details FROM requestslist JOIN requesttypes ON requestslist.requestId=requesttypes.requestId ORDER BY requestNo ASC ";
           $result= mysqli_query($connection,$query);
           
           //Genetrating a Job Description table if jobs any are submitted
@@ -46,7 +46,7 @@
             
             <?php
             while($row = mysqli_fetch_array($result)){
-                echo "<tr><td class='column1' >".$row["requestNo"].
+                echo "<tr ><td class='column1' >".$row["requestNo"].
                      "</td><td class='column1'>" .$row["requestId"].
                      "</td><td class='column1'>".$row["details"].
                      "</td><td class='column1'>".$row["userId"].
@@ -84,9 +84,9 @@
 <script>  
 $(document).ready(function(){  
      $('#editable_table').Tabledit({
-      url:'.inc/action.php',
+      url:'TableEditAction.php',
       columns:{
-       identifier:[3, "userId"],
+       identifier:[0, "requestNo"],
        editable:[[4, 'status'], [5, 'description']]
       },
       restoreButton:false,
@@ -94,7 +94,7 @@ $(document).ready(function(){
       {
        if(data.action == 'delete')
        {
-        $('#'+data.id).remove();
+        $('#'+data.requestNo).remove();
        }
       }
      });
