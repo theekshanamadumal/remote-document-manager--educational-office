@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 16, 2020 at 08:18 PM
+-- Generation Time: Jun 18, 2020 at 05:12 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `deon`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adminpwrds`
+--
+
+DROP TABLE IF EXISTS `adminpwrds`;
+CREATE TABLE IF NOT EXISTS `adminpwrds` (
+  `ID` varchar(12) NOT NULL,
+  `password1` varchar(20) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `adminpwrds`
+--
+
+INSERT INTO `adminpwrds` (`ID`, `password1`) VALUES
+('1234', '1234');
 
 -- --------------------------------------------------------
 
@@ -49,7 +69,16 @@ INSERT INTO `passwords` (`ID`, `password`) VALUES
 ('456456', '121212'),
 ('78787878', '122112'),
 ('987654321', '111'),
-('5959', '59');
+('5959', '59'),
+('2222222', '12'),
+('55555556', '56'),
+('656565655', '123'),
+('123123123V', '123456'),
+('12', '12'),
+('45', '45'),
+('56', '56'),
+('78', '78'),
+('789', '789');
 
 -- --------------------------------------------------------
 
@@ -67,6 +96,21 @@ CREATE TABLE IF NOT EXISTS `requestslist` (
   PRIMARY KEY (`requestNo`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `requestslist`
+--
+
+INSERT INTO `requestslist` (`requestNo`, `requestId`, `userId`, `status`, `description`) VALUES
+(1, 2, '971650834v', 'completed', 'collect document on 05/07/2020 morning'),
+(4, 5, '971650834v', 'new', 'new req'),
+(10, 3, '971650834v', 'completed', 'collect document on 05/07/2020 morning'),
+(12, 4, '3333333v', 'on going', 'sent to the head office'),
+(13, 6, '777777777V', 'completed', 'collect on 07/07/2020 morning'),
+(6, 4, '777777777V', 'new', 'new req'),
+(11, 2, '971650834v', 'ongoing', NULL),
+(16, 2, '971650834v', 'ongoing', NULL),
+(15, 3, '971650834v', 'ongoing', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -82,6 +126,16 @@ CREATE TABLE IF NOT EXISTS `requesttypes` (
   `details` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`requestId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `requesttypes`
+--
+
+INSERT INTO `requesttypes` (`requestId`, `principal`, `teacher`, `staff`, `details`) VALUES
+(1, 1, 1, 1, '1st type'),
+(5, 1, 1, 1, 'type 5'),
+(3, 1, 1, 1, 'type 3'),
+(2, 1, 1, 1, 'type 2');
 
 -- --------------------------------------------------------
 
@@ -113,10 +167,13 @@ INSERT INTO `userdetails` (`ID`, `first_name`, `second_name`, `address`, `teleph
 ('111111', 'h', '', 'j', '456', 'ghfhf', 'ghfhgfh', 'Principal'),
 ('444444', 'df', 'fd', 'dfdf', '565656', 'hgfhfh', 'sfddfsfd', 'teacher'),
 ('787878', 'q', '', 'dddd', '78888', 'qwqwqw', 'wqwqwq', 'teacher'),
-('456456', '', '', '', '45454545', '', '', 'teacher'),
-('78787878', '', '', '', '87878787', '', '', 'teacher'),
-('111222', '', '', '', '222111', '', '', 'teacher'),
-('987654321', 'sadun', 'gimhan', 'unagolla', '', '', 'unagolla MMV', 'teacher');
+('56', '', '', '', '', '', '', 'teacher'),
+('45', '', '', '', '', '', '', 'teacher'),
+('12', '', '', '', '', '', '', 'teacher'),
+('987654321', 'sadun', 'gimhan', 'unagolla', '', '', 'unagolla MMV', 'teacher'),
+('123123123V', 'kalum', 'pathiraja', 'padaviya', '0714545852', 'dfdsfdsfdsf@fgfgfdg.bnm', 'shri pura mmv', 'Staff'),
+('78', '', '', '', '', '', '', 'teacher'),
+('789', '', '', '', '', '', '', 'teacher');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -54,7 +54,6 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li><a href="Home.php">Home</a></li>
-            <li><a href="#">FAQs</a></li>
             <li><a href="ContactUs.php">Contact Us</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" id="myNavbar">
