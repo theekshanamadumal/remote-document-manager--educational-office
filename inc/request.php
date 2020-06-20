@@ -19,14 +19,25 @@
                 
                 $result= mysqli_query($connection,$query);
                 if ($result1){
-                  echo "Request is done";
+                  echo "<div class='container'> <div class='alert alert-success alert-dismissible '>
+                  <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                  <strong>Success!</strong> Request submitted successfully.
+                </div></div>";
+                
                 }
                 else{
-                  echo "Request is fail";
+                  echo "<div class='container'> <div class='alert alert-danger alert-dismissible '>
+                  <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                  <strong>Danger!</strong> Unable to submit request check whether you qualify as an candiate for the request.
+                </div></div>";
                 }
               }
               else{
-                header("location:login.php");
+                echo "<div class='container'> <div class='alert alert-warning alert-dismissible '>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                <strong>Warning!</strong> Must be logged in inoder to submit request.
+                </div></div>";
+                
               }
             }
             ?>
