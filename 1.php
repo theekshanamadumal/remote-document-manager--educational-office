@@ -60,7 +60,14 @@
           </div>
           <div><p>කිව නොහැක</p></div>
           <div>
-            <button type="button" class="btn btn-default">Resquest</button>
+            <form method="post">
+              <input type="submit" name="Request" class="button" value="Request" />
+            </form>
+            <?php
+              global $variable;
+              $variable = 1;
+              include_once('inc/request.php');
+            ?>
           </div>
         </div>
       </div>
